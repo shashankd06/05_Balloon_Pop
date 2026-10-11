@@ -1,0 +1,94 @@
+Lab 4 Balloon Pop - Verification Report
+Date: 11 October 2026
+
+Original repository: https://github.com/SETAPESU26/05_balloon_pop
+Original commit: c9a5e46d64da59c83365b8bc8cafed2c89ebbe9e
+Preserved starter: 7 tracked game files match Git originals (line endings normalized).
+Final source copied exactly into the deliverable folder.
+Runtime: Python 3.12.14 / Pygame 2.6.1, Windows
+Test environment: SDL dummy display/audio; real application loop included.
+
+Automated checks on the delivered source
+-----------------------------------------
+test_real_main_loop_renders_handles_clicks_restart_keys_and_quits (test_game.ApplicationTests.test_real_main_loop_renders_handles_clicks_restart_keys_and_quits) ... ok
+test_just_outside_and_square_corner_miss (test_game.ClickTests.test_just_outside_and_square_corner_miss) ... ok
+test_overlapping_balloons_pop_topmost (test_game.ClickTests.test_overlapping_balloons_pop_topmost) ... ok
+test_visible_edge_clicks_hit_for_all_sizes (test_game.ClickTests.test_visible_edge_clicks_hit_for_all_sizes) ... ok
+test_all_type_scores_and_pops_never_cost_lives (test_game.RoundTests.test_all_type_scores_and_pops_never_cost_lives) ... ok
+test_balloons_still_partly_visible_do_not_count_as_misses (test_game.RoundTests.test_balloons_still_partly_visible_do_not_count_as_misses) ... ok
+test_both_end_conditions_freeze_score_movement_and_spawning (test_game.RoundTests.test_both_end_conditions_freeze_score_movement_and_spawning) ... ok
+test_countdown_reaches_zero_and_ends_round (test_game.RoundTests.test_countdown_reaches_zero_and_ends_round) ... ok
+test_distinct_colors_and_correct_spawned_types (test_game.RoundTests.test_distinct_colors_and_correct_spawned_types) ... ok
+test_each_missed_type_costs_one_life_once (test_game.RoundTests.test_each_missed_type_costs_one_life_once) ... ok
+test_initial_state (test_game.RoundTests.test_initial_state) ... ok
+test_movement_and_countdown_use_elapsed_seconds (test_game.RoundTests.test_movement_and_countdown_use_elapsed_seconds) ... ok
+test_multiple_misses_end_round_without_negative_lives (test_game.RoundTests.test_multiple_misses_end_round_without_negative_lives) ... ok
+test_negative_elapsed_time_rejected (test_game.RoundTests.test_negative_elapsed_time_rejected) ... ok
+test_popped_balloon_cannot_be_counted_as_a_miss (test_game.RoundTests.test_popped_balloon_cannot_be_counted_as_a_miss) ... ok
+test_restart_button_resets_everything (test_game.RoundTests.test_restart_button_resets_everything) ... ok
+test_restart_rectangle_is_a_normal_play_area_during_round (test_game.RoundTests.test_restart_rectangle_is_a_normal_play_area_during_round) ... ok
+test_spawning_starts_and_repeats (test_game.RoundTests.test_spawning_starts_and_repeats) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.156s
+
+OK
+
+Video verification
+------------------
+before.mp4: 300 frames, 10.00 seconds, 205859 bytes
+after.mp4: 300 frames, 10.00 seconds, 165330 bytes
+after_full.mp4: 1139 frames, 37.96 seconds, 630304 bytes
+
+Captures use actual game engines/renderers with scripted click inputs, seeded randomness, 60 updates per second, and 30 video frames per second. No game state is manually set.
+After highlights are edited excerpts; the full capture is continuous.
+
+Full after-capture events
+-------------------------
+{"time": 1.1833333333333333, "event": "pop", "type": "penalty", "points": -10, "score": -10, "lives": 3}
+{"time": 1.9166666666666667, "event": "pop", "type": "bonus", "points": 30, "score": 20, "lives": 3}
+{"time": 4.833333333333333, "event": "pop", "type": "normal", "points": 10, "score": 30, "lives": 3}
+{"time": 5.5, "event": "pop", "type": "bonus", "points": 30, "score": 60, "lives": 3}
+{"time": 7.183333333333334, "event": "life_lost", "lives": 2}
+{"time": 7.25, "event": "life_lost", "lives": 1}
+{"time": 30.0, "event": "timer_end", "score": 360}
+{"time": 31.216666666666665, "event": "restart", "score": 0, "lives": 3, "time_left": 30}
+{"time": 34.43333333333333, "event": "life_lost", "lives": 2}
+{"time": 36.1, "event": "life_lost", "lives": 1}
+{"time": 36.61666666666667, "event": "life_lost", "lives": 0}
+{"time": 36.61666666666667, "event": "lives_end", "score": 0}
+
+Visual review: decoded video samples checked for HUD/legend readability, all type effects, missed lives, final score, and reset.
+No public chat link created and no remote repository changes made.
+
+Reference layout update
+-----------------------
+Layout reference: https://github.com/Ritu0713/60_number_guess
+Reference commit: dd558a0
+Main/game at repository root; videos and submissions in separate folders.
+Only layout was used; no reference code, videos, or personal links were copied.
+All game source, tests, and video files match the previous Balloon Pop deliverables byte-for-byte.
+Tests rerun from the new repository root:
+test_real_main_loop_renders_handles_clicks_restart_keys_and_quits (test_game.ApplicationTests.test_real_main_loop_renders_handles_clicks_restart_keys_and_quits) ... ok
+test_just_outside_and_square_corner_miss (test_game.ClickTests.test_just_outside_and_square_corner_miss) ... ok
+test_overlapping_balloons_pop_topmost (test_game.ClickTests.test_overlapping_balloons_pop_topmost) ... ok
+test_visible_edge_clicks_hit_for_all_sizes (test_game.ClickTests.test_visible_edge_clicks_hit_for_all_sizes) ... ok
+test_all_type_scores_and_pops_never_cost_lives (test_game.RoundTests.test_all_type_scores_and_pops_never_cost_lives) ... ok
+test_balloons_still_partly_visible_do_not_count_as_misses (test_game.RoundTests.test_balloons_still_partly_visible_do_not_count_as_misses) ... ok
+test_both_end_conditions_freeze_score_movement_and_spawning (test_game.RoundTests.test_both_end_conditions_freeze_score_movement_and_spawning) ... ok
+test_countdown_reaches_zero_and_ends_round (test_game.RoundTests.test_countdown_reaches_zero_and_ends_round) ... ok
+test_distinct_colors_and_correct_spawned_types (test_game.RoundTests.test_distinct_colors_and_correct_spawned_types) ... ok
+test_each_missed_type_costs_one_life_once (test_game.RoundTests.test_each_missed_type_costs_one_life_once) ... ok
+test_initial_state (test_game.RoundTests.test_initial_state) ... ok
+test_movement_and_countdown_use_elapsed_seconds (test_game.RoundTests.test_movement_and_countdown_use_elapsed_seconds) ... ok
+test_multiple_misses_end_round_without_negative_lives (test_game.RoundTests.test_multiple_misses_end_round_without_negative_lives) ... ok
+test_negative_elapsed_time_rejected (test_game.RoundTests.test_negative_elapsed_time_rejected) ... ok
+test_popped_balloon_cannot_be_counted_as_a_miss (test_game.RoundTests.test_popped_balloon_cannot_be_counted_as_a_miss) ... ok
+test_restart_button_resets_everything (test_game.RoundTests.test_restart_button_resets_everything) ... ok
+test_restart_rectangle_is_a_normal_play_area_during_round (test_game.RoundTests.test_restart_rectangle_is_a_normal_play_area_during_round) ... ok
+test_spawning_starts_and_repeats (test_game.RoundTests.test_spawning_starts_and_repeats) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.180s
+
+OK
