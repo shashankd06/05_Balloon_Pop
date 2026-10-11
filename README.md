@@ -2,6 +2,10 @@
 
 Personal repository: [shashankd06/05_Balloon_Pop](https://github.com/shashankd06/05_Balloon_Pop).
 
+SRN: PES1UG24CS433
+NAME: SHASHANK D
+SECTION: H
+
 A Pygame game where you click falling balloons before they leave the screen.
 All four assigned tasks are completed: circle-aware clicks, three balloon types,
 three lives, and a 30-second round with final score and restart.
